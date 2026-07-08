@@ -1,6 +1,6 @@
 # ModelFigure Shop: ร้านค้าออนไลน์สำหรับจัดจำหน่ายโมเดลและฟิกเกอร์
 
-Git Page https://itsiwa.github.io/model-and-figure-shop/
+Git Page https://itsiwa.github.io/ws-1/
 
 ## 1) ข้อมูลกลุ่ม (Group information)
 - **ชื่อกลุ่ม:** Model-Figure
