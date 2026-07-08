@@ -1,0 +1,56 @@
+graph TD
+
+    subgraph "ผู้ใช้งาน (Actors)"
+        G["ผู้เยี่ยมชม (Guest)"]
+        M["สมาชิก (Member)"]
+        SA["ผู้ดูแลร้าน (Shop Admin)"]
+    end
+
+    subgraph "React Frontend"
+        ShopUI["หน้าร้านค้า (Shop UI)"]
+        AdminUI["แดชบอร์ดผู้ดูแล (Admin UI)"]
+    end
+
+    subgraph "Node.js Backend"
+        API["REST API"]
+
+        subgraph "Business Services"
+            Auth["Auth Service"]
+            Catalog["Product Catalog Service\n(Brand / Franchise / Scale / Grade)"]
+            Preorder["Pre-order Service"]
+            Wishlist["Wishlist Service"]
+            Cart["Cart & Checkout Service"]
+            Payment["Payment Verification"]
+            Order["Order Management"]
+            Report["Sales Report"]
+        end
+    end
+
+    subgraph "Data Layer"
+        DB[("LocalStorage")]
+    end
+
+    G --> ShopUI
+    M --> ShopUI
+    SA --> AdminUI
+
+    ShopUI --> API
+    AdminUI --> API
+
+    API --> Auth
+    API --> Catalog
+    API --> Preorder
+    API --> Wishlist
+    API --> Cart
+    API --> Payment
+    API --> Order
+    API --> Report
+
+    Auth --> DB
+    Catalog --> DB
+    Preorder --> DB
+    Wishlist --> DB
+    Cart --> DB
+    Payment --> DB
+    Order --> DB
+    Report --> DB
