@@ -23,233 +23,130 @@
             --accent-soft: #ede9fe;
             --surface: #ffffff;
         }
-
         * { box-sizing: border-box; }
         html { scroll-behavior: smooth; }
 
         body {
-            font-family: "Noto Sans Thai", sans-serif;
+            font-family: "Noto Sans Thai", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
             color: var(--ink);
-            background: var(--paper);
-            background-image:
-                radial-gradient(ellipse at 10% 0%, rgba(124,58,237,0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 90% 100%, rgba(219,39,119,0.05) 0%, transparent 50%);
+            background: linear-gradient(180deg, var(--paper) 0%, #fbf8ff 100%);
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* ── Hero Banner ── */
         .page-hero {
-            background: linear-gradient(135deg, #1e1b2e 0%, #3b1f7a 60%, #6d28d9 100%);
-            padding: 3rem 1.5rem 2.75rem;
+            background: linear-gradient(135deg, #231a3a 0%, #3b1f7a 60%, #6d28d9 100%);
+            padding: 3.25rem 1.25rem;
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: inset 0 -1px 0 rgba(255,255,255,0.08);
+            color: white;
         }
-        .page-hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(167,139,250,0.18) 0%, transparent 55%),
-                radial-gradient(circle at 80% 50%, rgba(236,72,153,0.12) 0%, transparent 55%);
-        }
+
         .hero-label {
             font-family: "Chakra Petch", sans-serif;
-            font-size: 0.68rem;
-            letter-spacing: 0.28em;
+            font-size: 0.72rem;
+            letter-spacing: 0.24em;
             text-transform: uppercase;
-            color: rgba(196,181,253,0.85);
+            color: rgba(255,255,255,0.85);
             margin-bottom: 0.5rem;
-            position: relative;
         }
+
         .hero-title {
             font-family: "Chakra Petch", sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
+            font-size: 2.4rem;
+            font-weight: 800;
             color: #fff;
-            position: relative;
-            line-height: 1.2;
-            letter-spacing: 0.02em;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            line-height: 1.05;
+            margin: 0.15rem 0 0.5rem;
+            text-shadow: 0 6px 18px rgba(0,0,0,0.35);
         }
+
         .hero-sub {
-            font-size: 0.9rem;
-            color: rgba(196,181,253,0.75);
-            margin: 0.6rem auto 0;
-            position: relative;
-            max-width: 42rem;
+            font-size: 1rem;
+            color: rgba(229, 215, 255, 0.9);
+            margin: 0 auto 0;
+            max-width: 56rem;
         }
 
         /* ── Doc tag ── */
         .doc-tag {
             font-family: "Chakra Petch", sans-serif;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             color: var(--accent);
-            font-weight: 600;
+            font-weight: 700;
         }
 
         /* ── Main card ── */
         .main-card {
             background: var(--surface);
             border: 1px solid var(--line);
-            border-radius: 18px;
-            box-shadow: 0 4px 28px rgba(124,58,237,0.08), 0 1px 4px rgba(0,0,0,0.04);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-radius: 14px;
+            box-shadow: 0 8px 30px rgba(31, 22, 56, 0.06);
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            padding: 1.25rem;
         }
-        .main-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(124,58,237,0.12), 0 1px 4px rgba(0,0,0,0.05);
-        }
+        .main-card:hover { transform: translateY(-4px); }
 
-        /* ── Headings ── */
+        /* ── Markdown / content ── */
+        .markdown-content { max-width: 70ch; margin: 0 auto; }
+
         .markdown-content h1 {
             margin-top: 0;
-            font-size: 1.6rem;
-            font-weight: 700;
-            padding-bottom: 0.65rem;
-            border-bottom: 3px solid var(--ink);
+            font-size: 1.9rem;
+            font-weight: 800;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid rgba(30,27,46,0.08);
             font-family: "Chakra Petch", sans-serif;
             color: var(--ink);
-            line-height: 1.3;
         }
 
         .markdown-content h2 {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
-            margin-top: 1.8rem;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.4rem;
-            padding-left: 0.75rem;
-            border-bottom: 1px solid var(--line);
+            margin-top: 1.4rem;
+            margin-bottom: 0.6rem;
+            padding-left: 0.6rem;
             border-left: 4px solid var(--accent);
-            font-family: "Chakra Petch", sans-serif;
             color: var(--ink);
-            line-height: 1.3;
         }
 
-        .markdown-content h3 {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-top: 1.25rem;
-            margin-bottom: 0.5rem;
-            padding: 0.4rem 0.9rem;
-            background: var(--accent-soft);
-            border-left: 3px solid var(--accent);
-            border-radius: 0 4px 4px 0;
-            font-family: "Chakra Petch", sans-serif;
-        }
+        .markdown-content h3 { font-size: 1rem; color: var(--accent); }
 
-        /* ── Paragraph & lists ── */
-        .markdown-content p {
-            margin: 0.65rem 0;
-            color: var(--muted);
-            line-height: 1.9;
-        }
+        .markdown-content p,
+        .markdown-content li { color: var(--muted); line-height: 1.85; font-size: 0.98rem; }
 
-        .markdown-content ul {
-            margin: 0.4rem 0 0.9rem;
-            padding-left: 0;
-            list-style: none;
-            color: var(--muted);
-        }
-        .markdown-content ol {
-            margin: 0.4rem 0 0.9rem;
-            padding-left: 1.5rem;
-            color: var(--muted);
-        }
-        .markdown-content ol li::marker {
-            color: var(--accent);
-            font-weight: 700;
-            font-family: "Chakra Petch", sans-serif;
-        }
+        .markdown-content ul { padding-left: 1rem; }
+        .markdown-content ul li::before { content: '•'; color: var(--accent); display: inline-block; width: 1rem; margin-left: -1rem; }
 
-        .markdown-content ul li {
-            margin: 0.3rem 0;
-            line-height: 1.8;
-            padding: 0.3rem 0.75rem 0.3rem 2rem;
-            position: relative;
-            border-radius: 4px;
-            transition: background 0.15s;
-        }
-        .markdown-content ul li:hover { background: var(--accent-soft); }
-        .markdown-content ul li::before {
-            content: '▸';
-            position: absolute;
-            left: 0.65rem;
-            color: var(--accent);
-            font-size: 0.75rem;
-            top: 0.45rem;
-        }
+        .markdown-content table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        .markdown-content th, .markdown-content td { padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); }
 
-        .markdown-content ol li {
-            margin: 0.35rem 0;
-            line-height: 1.8;
-            padding: 0.3rem 0.5rem;
-            border-radius: 4px;
-            transition: background 0.15s;
-        }
-        .markdown-content ol li:hover { background: var(--accent-soft); }
-
-        .markdown-content strong {
-            color: var(--ink);
-            font-weight: 700;
-        }
-
-        /* ── Table ── */
-        .markdown-content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            border-radius: 6px;
-            overflow: hidden;
-            border: 1px solid var(--line);
-            box-shadow: 0 2px 8px rgba(124,58,237,0.06);
-        }
-        .markdown-content th {
-            background: linear-gradient(135deg, #1e1b2e, #3b1f7a);
-            color: #e9d5ff;
-            font-weight: 600;
-            font-family: "Chakra Petch", sans-serif;
-            font-size: 0.78rem;
-            letter-spacing: 0.04em;
-            padding: 0.7rem 0.9rem;
-            text-align: left;
-        }
-        .markdown-content td {
-            padding: 0.6rem 0.9rem;
-            border-bottom: 1px solid var(--line);
-            color: var(--muted);
-            vertical-align: top;
-        }
-        .markdown-content tr:nth-child(even) td { background: #faf8ff; }
-        .markdown-content tr:hover td { background: var(--accent-soft); transition: background 0.15s; }
-        .markdown-content tr:last-child td { border-bottom: none; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
         /* ── Diagram ── */
         .diagram-shell {
             margin-top: 2rem;
             padding: 1.25rem;
             border: 1px solid var(--line);
-            border-radius: 12px;
+            border-radius: 10px;
             background: var(--surface);
             overflow-x: auto;
-            box-shadow: 0 2px 12px rgba(124,58,237,0.07);
         }
-        .diagram-shell h2 {
-            margin: 0 0 1rem;
-            font-size: 1.1rem;
-            font-weight: 700;
-            font-family: "Chakra Petch", sans-serif;
-            color: var(--ink);
-            padding-bottom: 0.5rem;
-            padding-left: 0.75rem;
-            border-bottom: 1px solid var(--line);
-            border-left: 4px solid var(--accent);
+        .diagram-shell h2 { margin: 0 0 1rem; font-size: 1.05rem; }
+        .mermaid { display: block; margin: 0 auto; }
+
+        /* ── Responsive tweaks ── */
+        @media (min-width: 768px) {
+            .page-hero { padding: 4rem 2rem; }
+            .hero-title { font-size: 3.2rem; }
+            .main-card { padding: 2rem; }
         }
-        .mermaid { display: flex; justify-content: center; }
     </style>
 </head>
 
